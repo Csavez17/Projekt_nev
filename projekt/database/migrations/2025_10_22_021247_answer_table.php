@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('answer', function (Blueprint $table) {
             $table->id();
+            $table->foreign('id')->references('answer_id')->on('vote');
             $table->integer('question_id');
             $table->string('answer_text');
             $table->integer('number_of_votes');
