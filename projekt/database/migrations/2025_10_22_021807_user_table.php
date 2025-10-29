@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->id();
+            $table->foreign('id')->references('user_id')->on('question');
+            $table->foreign('id')->references('user_id')->on('vote');
             $table->string('user_name');
             $table->string('user_password');
             $table->string('user_e_mail');
