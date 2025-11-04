@@ -27,7 +27,20 @@ class VotesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'question_id' => 'required|exists:questions,id',
+            'vote' => 'required|boolean',
+        ]);
+
+        Vote::updateOrCreate(
+            [
+                'question_id' => $validated['question_id'],
+                'user_id' => auth()->id(),
+            ],
+            [
+                'vote' => $validated['vote'],
+            ]
+        );
     }
 
     /**
