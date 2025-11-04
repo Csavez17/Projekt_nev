@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AnswersController extends Controller
+class VotesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,20 @@ class AnswersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'question_id' => 'required|exists:questions,id',
+            'vote' => 'required|boolean',
+        ]);
+
+        Vote::updateOrCreate(
+            [
+                'question_id' => $validated['question_id'],
+                'user_id' => auth()->id(),
+            ],
+            [
+                'vote' => $validated['vote'],
+            ]
+        );
     }
 
     /**

@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             //$table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('question_category')->constrained('categories')->onDelete('cascade');
+            //$table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('question_name');
-            $table->datetime('question_duration');
-            $table->string('question_status');
+            //$table->datetime('question_duration');
+            //$table->string('question_status')->default('active');
             $table->timestamps();
         });
     }

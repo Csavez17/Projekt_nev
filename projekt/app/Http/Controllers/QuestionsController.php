@@ -31,10 +31,17 @@ class QuestionsController extends Controller
     {
         $request->validate([
             'question_name' => 'required|min:3|max:255',
+        ], [
+            'question_name.required' => 'A kérdés mező üresen nem menthető.',
+            'question_name.min' => 'A kérdésnek legalább 3 karakter hosszúnak kell lennie.',
+            'question_name.max' => 'A kérdés legfeljebb 255 karakter hosszú lehet.',
+        ], [
+            'category_id' => $validated['category_id'],
         ]);
 
         $question = new Question();
         $question->question_name = $request->question_name;
+        $question->category_id = $request->category_id;
         $question->save();
 
         return redirect()->route('questions.index')->with('success', 'Kérdés sikeresen létrehozva.');
