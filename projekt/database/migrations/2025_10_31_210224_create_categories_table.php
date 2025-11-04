@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('answer', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreign('id')->references('answer_id')->on('vote');
-            $table->integer('question_id');
-            $table->string('answer_text');
-            $table->integer('number_of_votes');
+            $table->string('category_name');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('answer');
+        Schema::dropIfExists('categories');
     }
 };
