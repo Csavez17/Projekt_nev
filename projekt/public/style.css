@@ -1,0 +1,133 @@
+/* ------------------ ALAPOK ------------------ */
+* {
+    margin: 0; /* Alapértelmezett külső margó eltüntetése */
+    padding: 0; /* Alapértelmezett belső margó eltüntetése */
+    box-sizing: border-box; /* Szélesség/magasság számításakor beleszámít a padding és border is */
+}
+
+body {
+    background-color: #7f6e78; /* Oldal háttérszíne */
+    min-height: 100dvh; /* Legalább a teljes képernyőt kitöltse */
+    line-height: 1.2em; /* Sorok közötti távolság */
+    font-size: 80%; /* Alap betűméret */
+    font-family: "Quicksand", sans-serif; /* Betűtípus az egész oldalon */
+}
+
+/* ------------------ HEADER (FEJLÉC) ------------------ */
+header {
+    display: flex; /* Elemei egymás mellé kerülnek */
+    justify-content: space-between; /* Logó és menü két szélre */
+    align-items: center; /* Függőlegesen középre igazítva */
+    min-height: 10vh; /* Legalább 10% a képernyő magasságából */
+    padding: 1em; /* Belső tér */
+    max-width: 90em; /* Maximális szélesség */
+    margin: 0 auto; /* Középre igazítás */
+}
+
+header img {
+    height: 10vh; /* Kép magassága */
+    padding: 0.25em; /* Kis belső tér */
+    background-color: #fedbef; /* Rózsaszín háttér */
+    border-radius: 50%; /* Kör alakú kép */
+}
+
+header ul {
+    display: flex; /* Menü elemei egymás mellé */
+    justify-content: space-between;
+    align-items: center;
+}
+
+header li {
+    margin-left: 1em; /* Bal oldali tér a menüelemek között */
+}
+
+header a {
+    color: #fff; /* Fehér szöveg */
+    font-weight: bold; /* Félkövér */
+}
+
+/* ------------------ MAIN (FŐ TARTALOM) ------------------ */
+main {
+    background: #fedbef; /* Rózsaszín háttér */
+    color: #801212; /* Sötétvörös szöveg */
+    border-radius: 0.5em; /* Lekerekített sarkok */
+    padding: 1em; /* Belső tér */
+    max-width: 90em; /* Maximális szélesség */
+    margin: 0 auto; /* Középre igazítás */
+    min-height: 80vh; /* Legalább a képernyő 80%-a */
+    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.5); /* Árnyék a doboz körül */
+}
+
+/* ------------------ FOOTER (LÁBLÉC) ------------------ */
+footer {
+    text-align: center; /* Középre igazítva a tartalom */
+    min-height: 10vh; /* Legalább 10% a képernyő magasságából */
+    padding: 1em; /* Belső tér */
+    max-width: 90em; /* Maximális szélesség */
+    margin: 0 auto; /* Középre igazítás */
+}
+
+/* ------------------ CÍMSOROK ------------------ */
+h1 {
+    margin: 1em 0; /* Tér a cím körül felül és alul */
+}
+
+/* ------------------ LISTÁK ------------------ */
+ul {
+    list-style: none; /* Alapértelmezett pontok eltüntetése */
+}
+
+/* ------------------ ŰRLAPOK ------------------ */
+fieldset {
+    border: none; /* Nincs keret */
+    display: grid; /* Rácsos elrendezés */
+    grid-template-columns: 1fr 3fr 2fr; /* Három oszlop különböző arányban */
+    margin-bottom: 0.5em; /* Tér a mezők között */
+}
+
+input,
+button,
+select,
+.button {
+    font-size: 1rem; /* Normál betűméret */
+    padding: 0.25em; /* Kis belső tér */
+    border: none; /* Nincs keret */
+    border-radius: 0.5em; /* Lekerekített sarkok */
+    color: #260a33; /* Sötétlila szöveg */
+}
+
+/* ------------------ GOMBOK ------------------ */
+button,
+.button {
+    padding: 0.5em 2em; /* Kényelmes méret */
+    font-weight: bold; /* Félkövér */
+    background-color: #91979c; /* Szürkés háttér */
+    color: #ebdaea; /* Világos szöveg */
+    transition: background-color 350ms ease-in-out; /* Animált színváltás */
+}
+
+button:hover,
+.button:hover {
+    background-color: black; /* Hoverkor fekete */
+}
+
+/* Egyedi .button kinézet */
+.button {
+    background-color: rgb(15, 20, 6); /* Sötétzöldes háttér */
+    color: #fff; /* Fehér szöveg */
+}
+
+/* ------------------ QUESTION-BOX (KÉRDÉS DOBOZ) ------------------ */
+.question-box {
+    background-color: #7f6e78; /* Szürkés-lila háttér */
+    color: rgb(22, 19, 19); /* Sötét szöveg */
+    padding: 1em; /* Belső tér */
+    border-radius: 0.5em; /* Lekerekített sarkok */
+    box-shadow: 0.2em 0.2em 0.3em rgba(0,0,0,0.3); /* Kis árnyék */
+    transition: transform 200ms ease; /* Animáció hoverhez */
+    margin-bottom: 1.5em; /* Tér a dobozok között */
+}
+
+.question-box:hover {
+    transform: translateY(-3px); /* Hoverkor kicsit kiemelkedik */
+}
